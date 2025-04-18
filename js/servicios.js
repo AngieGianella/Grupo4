@@ -40,19 +40,22 @@ export let servicios = [
     imagen: "img/005.jpg",
   },
 ];
-//comentario crear una variable card
-//dentro de card ira el codigo de html y boostrap con bakstip
-//mediante un for.each recorrer el array de servicios y concatenar en la variable card cada elemento
+
 let card = "";
 servicios.forEach((servicio) => {
-  card += `<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="${servicio.imagen}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${servicio.titulo}</h5>
-      <p class="card-text">${servicio.descripcion}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  card += `
+    <div class="d-flex mb-4" style="margin: 50px; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
+      <div style="flex: 1; max-width: 300px;">
+        <img src="${servicio.imagen}" alt="${servicio.titulo}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="p-4" style="flex: 2;">
+        <h5>${servicio.titulo}</h5>
+        <p>${servicio.descripcion}</p>
+         <h3>S/.${servicio.precio}</h3>
+  
+      </div>
     </div>
-  </div>`;
+  `;
 });
 
 let contenedor = document.getElementById("servicios");
