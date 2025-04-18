@@ -1,127 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glow & Beauty Spa</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <header>
-      <div class="col-12">
-        <div class="row">
-          <div class="col-4"><img src="img/logotipo2.png" width="250px" /></div>
-          <div class="col-8">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg">
-              <div class="container">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="reservas.html">Reservas</a>
-                    </li>
-                  </ul>
-                </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow & Beauty Spa</title>
+  <link href="library/boostrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-4"><img src="img/logotipo2.png" width="250px" /></div>
+        <div class="col-8">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="servicios.html">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="reservas.html">Reservas</a>
+                  </li>
+                </ul>
               </div>
-            </nav>
-          </div>
+            </div>
+          </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <div class="container text-center"></div>
+  <div class="container text-center" id="main">
 
-    <footer class="text-dark py-4 footer2">
-      <div class="container text-center">
-        <div class="row">
-          <!-- Sección 1: Información de la empresa -->
-          <div class="col-md-4">
-            <h5>Glow & Beauty Spa</h5>
-            <p>
-              Servicios de uñas y pestañas con los mejores productos y atención
-              personalizada.
-            </p>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8 p-4 tercero rounded">
+        <h2 class="mb-4">Reserva tu servicio</h2>
+        <form id="reservaForm">
+          <div class="mb-3">
+            <label for="servicio" class="form-label">Servicio</label>
+            <select class="form-select" id="servicios" required>
+              <option value="" selected disabled>Selecciona un servicio</option>
+              <option value="Manicure">Manicure</option>
+              <option value="Pedicure">Pedicure</option>
+              <option value="Pestañas">Pestañas</option>
+              <option value="Limpieza Facial">Limpieza Facial</option>
+            </select>
           </div>
 
-          <!-- Sección 2: Enlaces rápidos -->
-          <div class="col-md-4">
-            <h5>Enlaces rápidos</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="#" class="text-dark text-decoration-none">Inicio</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark text-decoration-none">Servicios</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark text-decoration-none">Contacto</a>
-              </li>
-              <li>
-                <a href="#" class="text-dark text-decoration-none"
-                  >Sobre nosotros</a
-                >
-              </li>
-            </ul>
+          <div class="mb-3">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="text" class="form-control" id="dni" maxlength="8" required>
           </div>
 
-          <!-- Sección 3: Redes sociales -->
-          <div class="col-md-4">
-            <h5>Síguenos</h5>
-            <a href="#" class="text-dark me-3"
-              ><i class="bi bi-facebook"></i
-            ></a>
-            <a href="#" class="text-dark me-3"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" required>
           </div>
+
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="correo" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha de la cita</label>
+            <input type="date" class="form-control" id="fecha" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="hora" class="form-label">Hora de la cita</label>
+            <input type="time" class="form-control" id="hora" required>
+          </div>
+
+          <button type="submit" class="btn primario text-white w-100">Reservar</button>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+  <footer class="text-dark py-4 footer2">
+    <div class="container text-center">
+      <div class="row">
+        <!-- Sección 1: Información de la empresa -->
+        <div class="col-md-4">
+          <h5>Glow & Beauty Spa</h5>
+          <p>
+            Servicios de uñas y pestañas con los mejores productos y atención
+            personalizada.
+          </p>
         </div>
 
-        <hr class="my-3 text-dark" />
+        <!-- Sección 2: Enlaces rápidos -->
+        <div class="col-md-4">
+          <h5>Enlaces rápidos</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="text-dark text-decoration-none">Inicio</a>
+            </li>
+            <li>
+              <a href="#" class="text-dark text-decoration-none">Servicios</a>
+            </li>
+            <li>
+              <a href="#" class="text-dark text-decoration-none">Contacto</a>
+            </li>
+            <li>
+              <a href="#" class="text-dark text-decoration-none">Sobre nosotros</a>
+            </li>
+          </ul>
+        </div>
 
-        <!-- Derechos de autor -->
-        <p class="mb-0">
-          &copy; 2025 Glow & Beauty Spa - Todos los derechos reservados.
-        </p>
+        <!-- Sección 3: Redes sociales -->
+        <div class="col-md-4">
+          <h5>Síguenos</h5>
+          <a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a>
+        </div>
       </div>
-    </footer>
 
-    <!-- Bootstrap Icons (si usas íconos de redes sociales) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
-    crossorigin="anonymous"
-  ></script>
+      <hr class="my-3 text-dark" />
+
+      <!-- Derechos de autor -->
+      <p class="mb-0">
+        &copy; 2025 Glow & Beauty Spa - Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Icons (si usas íconos de redes sociales) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+</body>
+<script src="library/boostrap/bootstrap.min.js"></script>
+<script src="library/boostrap/bootstrap.bundle.min.js"></script>
+<script type="module" src="js/servicios.js"></script>
+
+<script type="module" src="js/reservas.js"></script>
 </html>

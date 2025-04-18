@@ -1,4 +1,4 @@
-let servicios = [
+export let servicios = [
   {
     id: 1,
     titulo: "Lisoplastia Antifrizz",
