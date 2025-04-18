@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.bg-image {
+    background: url('img/spa-banner.jpg') no-repeat center center/cover;
+    height: 300px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.primario{
+    background-color: #FAA7C0;
+}
+.secundario{
+    background-color: #F7E5D4;
+}
+.tercero{
+    background-color:#E6C2BF ;
+}
+.footer2{
+    background-color: #FAA7C0;
+    width: 100%;
+    color: black;
+    margin-top: 100px;
+}
+.carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+  }
