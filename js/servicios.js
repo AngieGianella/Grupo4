@@ -51,8 +51,8 @@ servicios.forEach((servicio) => {
       <div class="p-4" style="flex: 2;">
         <h5>${servicio.titulo}</h5>
         <p>${servicio.descripcion}</p>
-         <h3>S/.${servicio.precio}</h3>
-  
+        <h3>S/.${servicio.precio}</h3>
+        <a href="reservas.html" class="btn btn-primary mt-4">Reservar</a>
       </div>
     </div>
   `;

@@ -115,3 +115,35 @@ label.form-label {
 .form-select:hover {
     background-color: #fff8fa;
 }
+
+.back-primario {
+    background-color: #FAA7C0;
+}
+
+.back-secundario {
+    background-color: #F7E5D4;
+}
+
+.back-color-tercero {
+    background-color: #E6C2BF;
+}
+
+.color-primario {
+    color: #FAA7C0;
+}
+
+.color-secundario {
+    color: #F7E5D4;
+}
+
+.color-tercero {
+    color: #E6C2BF;
+}
+
+.texto-info{
+    font-size: 12px;
+}
+
+.texto-developer {
+    font-size: 11px;
+}
