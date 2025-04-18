@@ -44,19 +44,20 @@ export let servicios = [
 let card = "";
 servicios.forEach((servicio) => {
   card += `
-    <div class="d-flex mb-4" style="margin: 50px; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
-      <div style="flex: 1; max-width: 300px;">
-        <img src="${servicio.imagen}" alt="${servicio.titulo}" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="servicio-card">
+      <div class="servicio-img">
+        <img src="${servicio.imagen}" alt="${servicio.titulo}">
       </div>
-      <div class="p-4" style="flex: 2;">
+      <div class="servicio-contenido">
         <h5>${servicio.titulo}</h5>
         <p>${servicio.descripcion}</p>
         <h3>S/.${servicio.precio}</h3>
-        <a href="reservas.html" class="btn btn-primary mt-4">Reservar</a>
+        <a href="reservas.html" class="btn btn-primary mt-3">Reservar</a>
       </div>
     </div>
   `;
 });
+
 
 let contenedor = document.getElementById("servicios");
 contenedor.innerHTML = card;
