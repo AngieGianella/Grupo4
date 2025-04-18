@@ -1,33 +1,117 @@
+/* Estilo general */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffaf9;
+    margin: 0;
+    padding: 0;
 }
-.bg-image {
-    background: url('img/spa-banner.jpg') no-repeat center center/cover;
-    height: 300px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+/* Estilo del header */
+header {
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fffaf9;
 }
-.card {
-    transition: transform 0.3s;
+
+/* Navbar */
+.navbar-nav .nav-link {
+    color: #b85c7c;
+    font-weight: 600;
+    margin-right: 15px;
 }
-.card:hover {
-    transform: scale(1.05);
+
+.navbar-nav .nav-link:hover {
+    color: #e06e97;
 }
-.primario{
-    background-color: #FAA7C0;
+
+/* Botón primario */
+.btn.primario {
+    background-color: #e06e97;
+    border: none;
 }
-.secundario{
-    background-color: #F7E5D4;
+
+.btn.primario:hover {
+    background-color: #cc5d85;
 }
-.tercero{
-    background-color:#E6C2BF ;
+
+/* Tarjeta de formulario */
+.tercero {
+    background-color: #fff0f3;
+    border: 1px solid #f7c8d2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
-.footer2{
-    background-color: #FAA7C0;
-    width: 100%;
-    color: black;
-    margin-top: 100px;
+
+/* Footer */
+.footer2 {
+    background-color: #fceae8;
+    color: #333;
 }
-.carousel-inner img {
-    height: 300px;
-    object-fit: cover;
-  }
+
+.footer2 h5 {
+    color: #b85c7c;
+}
+
+.footer2 a:hover {
+    color: #e06e97 !important;
+}
+
+/* Íconos redes */
+.bi {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+
+    header .col-4,
+    header .col-8 {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+#main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas del formulario */
+label.form-label {
+    font-weight: 600;
+    color: #b85c7c;
+}
+
+/* Inputs del formulario */
+.form-control,
+.form-select {
+    border: 1px solid #f7c8d2;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #e06e97;
+    box-shadow: 0 0 5px rgba(224, 110, 151, 0.4);
+}
+
+/* Estilo general del formulario */
+#reservaForm {
+    background-color: #fff0f3;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Título del formulario */
+#reservaForm h2 {
+    color: #b85c7c;
+    font-weight: bold;
+}
+
+/* Animación suave al pasar el mouse por inputs */
+.form-control:hover,
+.form-select:hover {
+    background-color: #fff8fa;
+}
