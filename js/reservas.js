@@ -1,4 +1,4 @@
-import { servicios } from "./servicios.js";
+import { servicios } from "./data.js";
 
 const selectServicios = document.getElementById("servicios");
 
