@@ -61,7 +61,12 @@
     </style>
   </head>
   <body>
-    <div class="container mt-5 mb-5">
+    <!-- Botón de Cerrar sesión -->
+    <div class="container mt-3 d-flex justify-content-end">
+      <button id="btnLogout" class="btn btn-outline-danger">Cerrar sesión</button>
+    </div>
+
+    <div class="container mt-2 mb-5">
       <h2 class="text-center panel-title">Panel de Administración</h2>
 
       <div class="row justify-content-center gy-4">
@@ -90,5 +95,20 @@
         </div>
       </div>
     </div>
+
+    <!-- Script para cierre de sesión -->
+    <script>
+      // Verifica si hay un usuario logueado
+      const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+      if (!usuario) {
+        location.href = "login.html";
+      }
+
+      // Evento para botón de cerrar sesión
+      document.getElementById("btnLogout").addEventListener("click", function () {
+        localStorage.removeItem("usuarioLogueado");
+        location.href = "index.html";
+      });
+    </script>
   </body>
 </html>

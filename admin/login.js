@@ -29,3 +29,14 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     errorMsg.classList.remove("d-none");
   }
 });
+
+
+
+ // Evento para botón de cerrar sesión
+ const btnLogout = document.getElementById("btnLogout");
+ if (btnLogout) {
+   btnLogout.addEventListener("click", () => {
+     localStorage.removeItem("usuarioLogueado");
+     location.href = "login.html";
+   });
+ }
