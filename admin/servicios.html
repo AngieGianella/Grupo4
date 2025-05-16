@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Servicios</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .servicios-container {
+        background-color: #fff0f3;
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 40px;
+        box-shadow: 0 6px 15px rgba(224, 110, 151, 0.1);
+      }
+
+      .servicios-title {
+        color: #b85c7c;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      .btn-custom {
+        background-color: #e06e97;
+        color: white;
+        font-weight: bold;
+        border: none;
+      }
+
+      .btn-custom:hover {
+        background-color: #cc5d85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container servicios-container">
+      <h2 class="text-center servicios-title">Gestión de Servicios</h2>
+
+      <form id="form-servicio" class="mb-4">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <input
+              type="text"
+              id="titulo"
+              class="form-control"
+              placeholder="Título"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <input
+              type="number"
+              id="precio"
+              class="form-control"
+              placeholder="Precio"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <input
+              type="text"
+              id="imagen"
+              class="form-control"
+              placeholder="Ruta de imagen"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <textarea
+              id="descripcion"
+              class="form-control"
+              rows="3"
+              placeholder="Descripción"
+              required
+            ></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-custom">
+              Agregar Servicio
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="lista-servicios"></tbody>
+      </table>
+
+      <div class="text-center mt-3">
+        <a href="/admin/panel.html" class="btn btn-custom">← Volver al Panel</a>
+      </div>
+    </div>
+
+    <script type="module">
+      let servicios = JSON.parse(localStorage.getItem("servicios")) || [];
+
+      const lista = document.getElementById("lista-servicios");
+      const form = document.getElementById("form-servicio");
+      let idEnEdicion = null;
+
+      function guardarServicios() {
+        localStorage.setItem("servicios", JSON.stringify(servicios));
+      }
+
+      function renderServicios() {
+        lista.innerHTML = "";
+        servicios.forEach((s) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+        <td>${s.id}</td>
+        <td>${s.titulo}</td>
+        <td>${s.descripcion}</td>
+        <td>S/. ${s.precio}</td>
+        <td><img src="${s.imagen}" alt="img" width="60" /></td>
+        <td>
+          <button class="btn btn-sm btn-warning me-1" onclick="editarServicio(${s.id})">Editar</button>
+          <button class="btn btn-sm btn-danger" onclick="eliminarServicio(${s.id})">Eliminar</button>
+        </td>
+      `;
+          lista.appendChild(row);
+        });
+      }
+
+      window.eliminarServicio = function (id) {
+        if (confirm("¿Seguro que deseas eliminar este servicio?")) {
+          servicios = servicios.filter((s) => s.id !== id);
+          guardarServicios();
+          renderServicios();
+        }
+      };
+
+      window.editarServicio = function (id) {
+        const servicio = servicios.find((s) => s.id === id);
+        document.getElementById("titulo").value = servicio.titulo;
+        document.getElementById("precio").value = servicio.precio;
+        document.getElementById("imagen").value = servicio.imagen;
+        document.getElementById("descripcion").value = servicio.descripcion;
+        idEnEdicion = id; // Guardamos el ID para actualizarlo después
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nuevoServicio = {
+          id: idEnEdicion ?? Date.now(), // Usa el id actual si se está editando
+          titulo: document.getElementById("titulo").value,
+          precio: parseFloat(document.getElementById("precio").value),
+          imagen: document.getElementById("imagen").value,
+          descripcion: document.getElementById("descripcion").value,
+        };
+
+        if (idEnEdicion) {
+          // Editando: actualizamos el objeto
+          servicios = servicios.map((s) =>
+            s.id === idEnEdicion ? nuevoServicio : s
+          );
+          idEnEdicion = null; // Reiniciamos estado de edición
+        } else {
+          // Nuevo servicio
+          servicios.push(nuevoServicio);
+        }
+
+        guardarServicios();
+        renderServicios();
+        form.reset();
+      });
+
+      renderServicios();
+    </script>
+  </body>
+</html>
